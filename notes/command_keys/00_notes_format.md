@@ -1,0 +1,52 @@
+# <Category Title>  
+*(Example: Normal Mode Motion Keys)*  
+
+## Overview
+
+Provide a concise description of the category and its function in Vim.  
+Explain how these keys interact with other command types (e.g., operators, text objects, registers).  
+
+---
+
+### `<key>`  
+*(Example: `w`)*  
+
+**Function:**  
+Provide a precise definition of what the key does, including scope and direction of motion or action.  
+Mention whether it is *inclusive* (includes the endpoint) or *exclusive*.  
+
+**Mode:**  
+Indicate the Vim mode(s) in which the key is valid (e.g., Normal, Visual, Operator-pending).  
+
+**Syntax:**  
+Show the typical syntactic usage or combination form (e.g., `dw`, `3w`, `yw`, `gUw`).  
+
+**Description:**  
+Offer a formal explanation of how the key behaves. Include details such as:  
+- The type of motion or operation performed.  
+- Boundary rules (e.g., word definitions, line termination).  
+- Interactions with counts, text objects, or other modifiers.  
+
+**Examples:**  
+Provide practical, ascending examples — from fundamental to advanced.  
+1. *Basic:* A simple example of direct usage.  
+2. *Intermediate:* A combination with another motion or count.  
+3. *Advanced:* A contextual or compound use case.  
+
+**Common Pairings:**  
+List typical operator or command combinations that involve this key (e.g., `d`, `y`, `c`, `gU`, `5j`).  
+
+**Notes:**  
+Add relevant caveats, alternate keys, or behavioral nuances.  
+If the key interacts differently in certain settings (e.g., word boundaries defined by `'iskeyword'`), document that.  
+
+---
+
+### `<next key>`  
+*(Example: `e`)*  
+
+**Function:**  
+...  
+(repeat structure as above)
+
+---
