@@ -15,9 +15,6 @@ Explain how these keys interact with other command types (e.g., operators, text 
 Provide a precise definition of what the key does, including scope and direction of motion or action.  
 Mention whether it is *inclusive* (includes the endpoint) or *exclusive*.  
 
-**Mode:**  
-Indicate the Vim mode(s) in which the key is valid (e.g., Normal, Visual, Operator-pending).  
-
 **Syntax:**  
 Show the typical syntactic usage or combination form (e.g., `dw`, `3w`, `yw`, `gUw`).  
 
