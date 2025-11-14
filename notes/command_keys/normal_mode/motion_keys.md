@@ -297,3 +297,126 @@ Move the cursor to the last line of the buffer (end of file). *Exclusive* of sel
 When used in conjunction with `$`, e.g., `G$`, one reaches the last character of the file’s last line.
 
 ---
+
+### `f`  
+
+**Function:**  
+Locate and move the cursor to the *next* occurrence of a specified character on the current line.  
+This motion is *inclusive*; the cursor rests directly on the matched character.
+
+**Syntax:**  
+`f<char>`  
+Operator forms: `df<char>`, `yf<char>`, `cf<char>`  
+Count forms: `3f<char>`
+
+**Description:**  
+The `f` motion executes a forward, intra-line search for a single ASCII character.  
+If a count is supplied, Vim resolves the target as the *n*-th subsequent occurrence of that character.  
+The search terminates at the line boundary; it does not wrap.  
+Failure to find a match leaves the cursor unchanged and terminates the operator (if any) with no effect.
+
+**Examples:**  
+1. *Basic:* `f,` moves the cursor to the next comma on the line.  
+2. *Intermediate:* `3f(` moves to the third `(` to the right of the cursor.  
+3. *Advanced:* `df:` deletes everything from the cursor up to and including the next colon.
+
+**Common Pairings:**  
+`d`, `y`, `c`, `gU`, `gu`, counts (`2`, `3`, …)
+
+**Notes:**  
+`f` is directionally symmetrical with `F`, which performs the same action in reverse.  
+Motion precision depends on literal character matching rather than text-object semantics.
+
+---
+
+### `F`  
+
+**Function:**  
+Locate and move the cursor to the *previous* occurrence of a specified character on the current line.  
+This motion is *inclusive*; the cursor rests directly on the matched character.
+
+**Syntax:**  
+`F<char>`  
+Operator forms: `dF<char>`, `yF<char>`, `cF<char>`  
+Count forms: `2F<char>`
+
+**Description:**  
+`F` implements a backward, intra-line search for a single character.  
+Counts target the *n*-th preceding occurrence.  
+The search is confined to the current line and does not wrap.  
+If no match exists, the cursor remains unchanged and any operator is aborted.
+
+**Examples:**  
+1. *Basic:* `F{` moves to the nearest `{` to the left.  
+2. *Intermediate:* `2F"` moves to the second prior quotation mark.  
+3. *Advanced:* `cF=` changes all text from the cursor back through the preceding `=`.
+
+**Common Pairings:**  
+`d`, `y`, `c`, `gU`, `gu`, counts
+
+**Notes:**  
+`F` mirrors `f` but operates in reverse.  
+Exact character fidelity is required; multibyte characters behave according to buffer encoding.
+
+---
+
+### `t`  
+
+**Function:**  
+Move the cursor forward to the position *just before* the next occurrence of a specified character.  
+This motion is *exclusive*; the target character itself is not included.
+
+**Syntax:**  
+`t<char>`  
+Operator forms: `dt<char>`, `yt<char>`, `ct<char>`  
+Count forms: `4t<char>`
+
+**Description:**  
+`t` performs a forward, partial search for a character, stopping one column before the match.  
+Counts index the *n*-th occurrence.  
+Like `f`, the search is bounded by the current line.  
+Exclusive behavior makes it suitable for precise operator ranges that should not consume the delimiter.
+
+**Examples:**  
+1. *Basic:* `t)` moves to the column immediately before the next `)`.  
+2. *Intermediate:* `dt:` deletes up to, but not including, the next colon.  
+3. *Advanced:* `2ct,` changes text up to the second comma while preserving the delimiter.
+
+**Common Pairings:**  
+`d`, `y`, `c`, text transformations such as `gU` and `gu`, counts
+
+**Notes:**  
+`t` is the forward counterpart to `T`.  
+Its exclusivity is a primary differentiator relative to `f`.
+
+---
+
+### `T`  
+
+**Function:**  
+Move the cursor to the position *just before* the previous occurrence of a specified character.  
+This motion is *exclusive*; the character itself is not included.
+
+**Syntax:**  
+`T<char>`  
+Operator forms: `dT<char>`, `yT<char>`, `cT<char>`  
+Count forms: `3T<char>`
+
+**Description:**  
+`T` performs a reverse, intra-line search, stopping one column before the matched character.  
+Counts select the *n*-th prior occurrence.  
+The search halts at the beginning of the line and does not wrap.  
+Exclusive movement supports delimiter-sensitive editing operations.
+
+**Examples:**  
+1. *Basic:* `T=` stops one character before the preceding `=`.  
+2. *Intermediate:* `dT(` deletes backward up to, but not including, the preceding `(`.  
+3. *Advanced:* `3cT,` changes text back to just before the third prior comma.
+
+**Common Pairings:**  
+`d`, `y`, `c`, case-modification operators, counts
+
+**Notes:**  
+`T` complements `t` for reverse directional editing.  
+Operational semantics match those of `t`, differing only in direction.
+
