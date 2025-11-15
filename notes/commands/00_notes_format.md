@@ -1,23 +1,27 @@
-## `<Command Name>`
-
-### Functional Description
+# `<Command Name>`
 
 A concise, formal explanation of what the command accomplishes and its operational scope.
 
-### Command Syntax
+---
+
+## Command Syntax
 
 ```
 :<command> [arguments]
 ```
 
-### Behavioral Semantics
+---
+
+## Behavioral Semantics
 
 * How Neovim interprets the command
 * Preconditions (if any)
 * Postconditions or resulting editor state
 * Side effects (e.g., buffer changes, window mutations)
 
-### Usage Examples
+---
+
+## Usage Examples
 
 ```
 :<command> <example-argument>
@@ -25,11 +29,15 @@ A concise, formal explanation of what the command accomplishes and its operation
 
 Brief description of the scenario and expected outcome.
 
-### Related Commands
+---
+
+## Related Commands
 
 List commands with adjacent functionality or often used in conjunction with this command.
 
-### Configuration Interactions
+---
+
+## Configuration Interactions
 
 Document any settings in `init.lua` or options that alter the command’s behavior.
 
