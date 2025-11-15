@@ -1,10 +1,10 @@
-## `:edit` (alias `:e`)
-
-### Functional Description
+# `:edit` (alias `:e`)
 
 `:edit` is a core Neovim command used to load (or reload) a file into the current buffer. It allows you to open a file for editing, switch to another buffer, or discard unsaved changes when reloading.  
 
-### Command Syntax
+---
+
+## Command Syntax
 
 ```
 :edit [++opt] [+cmd] [file]
@@ -17,7 +17,9 @@ Abbreviations:
 - `+cmd` executes an Ex command after editing  
 - `file` is the path to the file to open  
 
-### Behavioral Semantics
+---
+
+## Behavioral Semantics
 
 - **Interpretation**: When you run `:edit`, Neovim reads the specified file (or re-reads the current buffer’s file if none is given) into a buffer in memory.
 - **Preconditions**: 
@@ -34,7 +36,9 @@ Abbreviations:
   - File‐format detection: when reading a file, Neovim detects end‑of‑line style (`'fileformat'`) and file encoding.
   - Timestamp tracking: Neovim tracks file modification times so that it can warn or reload if the file changes outside Neovim.
 
-### Usage Examples
+---
+
+## Usage Examples
 
 ```
 :edit README.md
