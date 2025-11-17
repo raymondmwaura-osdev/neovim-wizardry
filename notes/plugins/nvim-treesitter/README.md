@@ -56,6 +56,12 @@ Here is how to install `nvim-treesitter` in Neovim, depending on your plugin man
 
    ```lua
    require("lazy").setup({
+       {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"}
+   })
+   ```
+
+   ```lua
+   require("lazy").setup({
      {
        "nvim-treesitter/nvim-treesitter",
        build = ":TSUpdate",
